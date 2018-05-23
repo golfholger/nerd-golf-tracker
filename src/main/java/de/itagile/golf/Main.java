@@ -16,8 +16,7 @@ public class Main {
 
 		konsole.println(tracker.starte()).beendeAusgabe();
 		
-		while (true)
-		{
+		while (true) {
 			String befehl = konsole.liesZeileEin();
 			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
 		}

@@ -1,5 +1,5 @@
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
+    gradleVersion = '4.7'
 }
 
 
@@ -15,7 +15,7 @@ defaultTasks 'clean', 'build'
 
 sourceCompatibility = 1.8
 tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:-options"
+    options.compilerArgs << "-Xlint:all"
     options.encoding = 'UTF-8'
 }
 
@@ -36,7 +36,7 @@ apply 'upload'
 sourceSets.test.java { srcDir 'src/unittests/java' }
 dependencies {
     testCompile junit, hamcrest
-    testCompile 'org.mockito:mockito-core:2.6.3'
+    testCompile 'org.mockito:mockito-core:2.18.3'
 }
 
 apply 'cucumber'
