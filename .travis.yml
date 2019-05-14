@@ -1,17 +1,17 @@
 language: java
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - "$HOME/.gradle/caches/"
-    - "$HOME/.gradle/wrapper/"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 deploy:
   provider: releases
   skip_cleanup: true
-  file: build/libs/nerd-golf-tracker.jar
   api_key:
-    secure: M8lz2gwJmBC4KGz7S/Z3MPIUN1lWX6MC56dmxW7CU4/7Z3AZW06DOKd5jAwDAB8XNGR1+qtcKl3DTjIFC++K80XD4yHlDpsvYN1Vp9cwz58jT4FYlsOz2M4feq7iS0bhQHh7UECQgeAgsKh7mx2ElQGRFiF05HtlVCx7TCgrMeUcvgJUjWFCco9Z0w9N6LT0GYHE6TJ7WDWjQUhgBmJ1PKmhNtZFDwjPGqdgXgbwqkQtH6a+Hiyl3SA3O1KA7Xe7a77m6EittCSbYjYPZ5fsmcyAo078SQaQNSeS1z5uKGFBxWxlID/IKe/u5hk9jVT1+dg7OET1s0njnmBjzt0QVJwdFDQiwi4SfpoitAmE6wwnJRmi7VHLcoj+KPeNLbifO9TyzqqA1DRB85EXzi6Y6XaH1Q65niJqAScnIXbsT3NqfCdyoD2p16KIFNpMcuyjoDlZfpob9bTtnYv7nfwjrLnKx0E0GIZQ1+NG/YKhwB6n7Iyo0vO3gDNVLzcSGC/iHGIRbUM9uJlWGtnYeVZ7OWIJc7a0+Hdku+k0q1zWFuLINY3oPqyrtJq1CrQkvky6Z6jT1oN1ZPQPeHZQ0J3sDfZ0inWIGTx3NTAxM6UlGTzftJ57YWWnQuMwLPr+r7jpXOTSuY1WpLt4HI26FgK5CLGJhw0GyleS7DUMxlFhwhI=
+    secure: RCak8e8mFbL9L6uJMpfPyOFQ+P8UclQNxOCW7F7n4epJPs5Zb8lAJl0i/gnnM12j9L61DWIEaXFxKPrs2goYBK2PZuIR5zR2W4TVw31UesAOfxT4SG6jdxgzLJje7IPHRlDUT7K7FQf8etz6UUWVlxr68gfFN50pbyvG0Ix2CTjZJZf7Q4lVRyDsHAAp3m9UJVjStmEMJiQ4F5o0oY6h2QeGIvcaMdFRS9VB1Nao29PE0DxwpkZeok+MOQ2csI0b9Y76xD4FX6mrOiLOvo1jfwhUJmoQ25iDu7C5k33FdnrqYFNIolI/4B8utYEx3my/bUoQIwLHJHmRPKYK7VauXD55Ma0klXZhii+nbZMEAZzRnf/IZTJs0p6FA1KqpgNmBP2JG3Hz4E4GzJvy6I4dQK9XWP81njmLPU8eAEETj0D2hQsUc5kRDjSZD8XB1MkFFYH3Bl+pbHhGaEyy5IP/5hSaPM3v5OsDWAX8+Ty7Dw/ABib4abtKgtye1PAr53d1CNVb7Vm6+7Coeb+9zmdiPOVJjva/vsfrHQ7G3bkSeTOIkU/5udpm8ML6KR766B7aUHBo9e+hREVJT9J3oEqHD/KPLfdvp5754642tUiaWVzpWyVA1dVzWO9n9U4LAElvVLssrhDyRkCzGRoqSQz2tYzMrYqHxjNtlbWN2yEQ3N0=
+  file: build/libs/nerd-golf-tracker.jar
   on:
     repo: golfholger/nerd-golf-tracker
     tags: true
