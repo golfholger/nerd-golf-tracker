@@ -14,6 +14,7 @@ Quotes Language: German
 * Dann Importieren in Eclipse oder IDEA
 
 ## Build-Server
-
+[![Build Status](https://api.travis-ci.org/golfholger/nerd-golf-tracker.svg?branch=master)](https://travis-ci.org/golfholger/nerd-golf-tracker)
+[![Code Coverage](https://codecov.io/gh/golfholger/nerd-golf-tracker/branch/master/graph/badge.svg)](https://codecov.io/gh/golfholger/nerd-golf-tracker)
 https://travis-ci.com/golfholger/nerd-golf-tracker
 

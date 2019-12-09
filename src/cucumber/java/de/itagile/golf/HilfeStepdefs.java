@@ -8,6 +8,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import de.itagile.golf.util.SystemProperties;
+
 public class HilfeStepdefs {
 	
 	private TrackerDriver tracker;
@@ -21,13 +23,13 @@ public class HilfeStepdefs {
 		tracker.gibEin("Hilfe");
 	}
 	
-	@And("\"(.*)\" steht in der ersten Zeile mit Zeilenumbruch")
-	public void ersteZeile(String zeile) {
-		String[] zeilen = tracker.letzteAntwort().split("\n");
-		assertThat(zeilen[0], equalTo(zeile));
+	@Then("steht in der ersten Zeile ein einleitender Text mit Zeilenumbruch")
+	public void ersteZeile() {
+		String[] zeilen = tracker.letzteAntwort().split(SystemProperties.LINE_SEPARATOR);
+		assertThat(zeilen[0], equalTo("Ich reagiere auf: "));
 	}
 	
-	@Then("listet der NerdGolfTracker einen Eintrag zu (.*) auf")
+	@And("listet der NerdGolfTracker einen Eintrag zu (.*) auf")
 	public void pruefeHilfeEintrag(String kommando) {
 		tracker.assertThatAntwort(containsString(kommando));
 	}

@@ -1,12 +1,13 @@
 package de.itagile.golf.operation;
 
-import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import de.itagile.golf.util.SystemProperties;
 
 import org.junit.Test;
 
@@ -33,7 +34,7 @@ public class HilfeTest {
 	}
 
 	private int anzahlZeilen(String string) {
-		String[] zeilen = string.split(LINE_SEPARATOR);
+		String[] zeilen = string.split(SystemProperties.LINE_SEPARATOR);
 		return zeilen.length;
 	}
 
