@@ -32,7 +32,6 @@ jar.manifest {
 }
 apply 'upload'
 
-
 sourceSets.test.java { srcDir 'src/unittests/java' }
 dependencies {
     testCompile junit, hamcrest
@@ -41,5 +40,14 @@ dependencies {
 
 apply 'cucumber'
 
+// Apply the jacoco plugin to add support for test coverage
+apply plugin: 'jacoco'
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+check.dependsOn jacocoTestReport
 
 apply 'eclipse', 'idea'

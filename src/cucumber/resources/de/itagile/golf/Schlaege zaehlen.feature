@@ -9,7 +9,6 @@ Feature: Schläge pro Loch zählen
             |1|
             |2|
 
-    @in_arbeit
     Scenario: Lochwechsel
         When ich auf einem Loch gespielt habe
         Then zählen die Schläge auf dem nächsten Loch wieder von 0 an
