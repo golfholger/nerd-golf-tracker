@@ -48,6 +48,6 @@ jacocoTestReport {
         html.enabled = true
     }
 }
-test.dependsOn jacocoTestReport
+check.dependsOn jacocoTestReport
 
 apply 'eclipse', 'idea'
