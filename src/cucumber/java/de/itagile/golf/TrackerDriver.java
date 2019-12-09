@@ -71,8 +71,10 @@ public class TrackerDriver {
 	private String readOutputFrom(BufferedReader reader) throws IOException {
 		StringBuilder collector = new StringBuilder();
 		collector.append(reader.readLine());
+		collector.append("\n");
 		while (reader.ready()) {
 			collector.append(reader.readLine());
+			collector.append("\n");
 		}
 		return collector.toString();
 	}
