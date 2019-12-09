@@ -25,7 +25,7 @@ public class AktuellesLochStepdefs {
 	}
 
 	private void pruefeLochAnzeige(int loch) {
-		tracker.assertThatAntwort(containsString(String.format("%d.Loch", loch)));
+		tracker.assertThatAntwort(containsString(String.format("%d. Loch", loch)));
 	}
 	
 }
