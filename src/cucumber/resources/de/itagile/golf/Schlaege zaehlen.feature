@@ -3,6 +3,7 @@ Feature: Schläge pro Loch zählen
     Scenario Outline: Schläge auf einem Loch zählen
         When ich den Ball <x>-mal schlage
         Then zählt der NerdGolfTracker auch so viele Schläge
+        And unterscheided der Text für zwischen Schlag und Schläge
 
         Examples:
             |x|
