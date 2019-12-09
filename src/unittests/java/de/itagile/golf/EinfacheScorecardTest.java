@@ -27,6 +27,7 @@ public class EinfacheScorecardTest {
 	public void setztSchlagzahlZurueck() throws Exception {
 		scorecard.erhoeheAnzahlSchlaege();
 		scorecard.schliesseLochAb();
+		assertThat(scorecard.anzahlSchlaege(), is(0));
 	}
 	
 	@Test
