@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import de.itagile.golf.operation.Beenden;
 import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
@@ -49,6 +50,11 @@ public class EinfacherIntepreterTest {
 	@Test
 	public void hilfeBefehlTest() throws Exception {
 		assertThat(interpreter.interpretiere("Hilfe"), instanceOf(Hilfe.class));
+	}
+	
+	@Test
+	public void beenden() throws Exception {
+		assertThat(interpreter.interpretiere("Beenden"), instanceOf(Beenden.class));
 	}
 	
 	@Test
