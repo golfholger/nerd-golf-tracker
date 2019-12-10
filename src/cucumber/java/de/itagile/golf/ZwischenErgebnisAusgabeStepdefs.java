@@ -13,9 +13,9 @@ public class ZwischenErgebnisAusgabeStepdefs {
 		this.tracker = tracker;
 	}	
 	
-	@When("ich den Befehl Zwischenergebnis anzeigen eingebe")
+	@When("ich den Befehl Zwischenergebnis ausgeben eingebe")
 	public void GebeBefehlEin() {	
-		tracker.gibEin("Zwischenergebnis");
+		tracker.gibEin("Zwischenergebnis ausgeben");
 	}
 	
 	@Then("wird die Gesamtanzahl (\\d+) Schläge für alle Löcher angezeigt")
