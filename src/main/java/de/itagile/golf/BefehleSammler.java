@@ -6,6 +6,7 @@ import java.util.List;
 import de.itagile.golf.befehl.HilfeBefehl;
 import de.itagile.golf.befehl.LochwechselBefehl;
 import de.itagile.golf.befehl.SchlagBefehl;
+import de.itagile.golf.befehl.ZwischenergebnisBefehl;
 
 public class BefehleSammler {
 
@@ -13,6 +14,7 @@ public class BefehleSammler {
 		List<Befehl> ernte = new ArrayList<>();
 		ernte.add(new SchlagBefehl());
 		ernte.add(new LochwechselBefehl());
+		ernte.add(new ZwischenergebnisBefehl());
 		ernte.add(new HilfeBefehl());
 		return ernte;
 	}
