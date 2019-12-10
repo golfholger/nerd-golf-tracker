@@ -15,12 +15,12 @@ public class Schlagzahlausgabe implements Operation {
 	public String fuehreAus(Scorecard scorecard) {
 		String vorlage = this.getVorlage(scorecard);
 		return String.format(vorlage, 
-							 scorecard.anzahlSchlaege(), 
+							 scorecard.anzahlSchlaegeAktuellesLoch(), 
 							 folgeoperation.fuehreAus(scorecard));
 	}
 	
 	private String getVorlage(Scorecard scorecard) {
-		if(scorecard.anzahlSchlaege() != 1) 
+		if(scorecard.anzahlSchlaegeAktuellesLoch() != 1) 
 		{
 			return "Du hast %d Schläge %s";
 		}	
