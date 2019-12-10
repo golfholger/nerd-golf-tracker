@@ -18,19 +18,19 @@ public class SchlagzahlausgabeTest {
 	
 	@Test
 	public void meldetEinenSchlag() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(1);
+		when(scorecard.anzahlSchlaegeAktuellesLoch()).thenReturn(1);
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
 	}
 	
 	@Test
 	public void meldetZweiSchlaege() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(2);
+		when(scorecard.anzahlSchlaegeAktuellesLoch()).thenReturn(2);
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("2 Schläge"));
 	}
 	
 	@Test
 	public void meldetSechsSchlaege() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(6);
+		when(scorecard.anzahlSchlaegeAktuellesLoch()).thenReturn(6);
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("6 Schläge"));
 	}	
 	

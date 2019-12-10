@@ -13,21 +13,21 @@ public class EinfacheScorecardTest {
 	@Test
 	public void inkrementiertSchlagzahlEinmal() throws Exception {
 		scorecard.erhoeheAnzahlSchlaege();
-		assertThat(scorecard.anzahlSchlaege(), is(1));
+		assertThat(scorecard.anzahlSchlaegeAktuellesLoch(), is(1));
 	}
 	
 	@Test
 	public void inkrementiertSchlagzahlMehrmals() throws Exception {
 		scorecard.erhoeheAnzahlSchlaege();
 		scorecard.erhoeheAnzahlSchlaege();
-		assertThat(scorecard.anzahlSchlaege(), is(2));
+		assertThat(scorecard.anzahlSchlaegeAktuellesLoch(), is(2));
 	}
 	
 	@Test
 	public void setztSchlagzahlZurueck() throws Exception {
 		scorecard.erhoeheAnzahlSchlaege();
 		scorecard.schliesseLochAb();
-		assertThat(scorecard.anzahlSchlaege(), is(0));
+		assertThat(scorecard.anzahlSchlaegeAktuellesLoch(), is(0));
 	}
 	
 	@Test
@@ -40,4 +40,30 @@ public class EinfacheScorecardTest {
 		scorecard.schliesseLochAb();
 		assertThat(scorecard.aktuellesLoch(), is(2));
 	}
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmErstenLochVorErstemSchlag() throws Exception {
+		assertThat(scorecard.anzahlSchlaegeGesamt(), is(0));
+	}
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmErstenLochNachErstemSchlag() throws Exception {
+		scorecard.erhoeheAnzahlSchlaege();
+		assertThat(scorecard.anzahlSchlaegeGesamt(), is(1));
+	}	
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmZweitenLochVorErstemSchlag() throws Exception {
+		scorecard.erhoeheAnzahlSchlaege();
+		scorecard.schliesseLochAb();
+		assertThat(scorecard.anzahlSchlaegeGesamt(), is(1));
+	}
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmZweitenLochNachErstemSchlag() throws Exception {
+		scorecard.erhoeheAnzahlSchlaege();
+		scorecard.schliesseLochAb();
+		scorecard.erhoeheAnzahlSchlaege();
+		assertThat(scorecard.anzahlSchlaegeGesamt(), is(2));
+	}	
 }

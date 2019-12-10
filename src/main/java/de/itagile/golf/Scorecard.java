@@ -4,12 +4,12 @@ public interface Scorecard {
 
 	void erhoeheAnzahlSchlaege();
 
-	int anzahlSchlaege();
+	int anzahlSchlaegeAktuellesLoch();
 
 	void schliesseLochAb();
 
 	int aktuellesLoch();
 
-	int gesamtanzahlSchlaege();
+	int anzahlSchlaegeGesamt();
 
 }

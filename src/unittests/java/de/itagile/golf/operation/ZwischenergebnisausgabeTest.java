@@ -15,8 +15,18 @@ public class ZwischenergebnisausgabeTest {
 	private Operation zwischenergebnisausgabe = new Zwischenergebnisausgabe();
 
 	@Test
-	public void meldetZwischenergebnisVorErstemSchlagAnErstemLoch() throws Exception {
-		when(scorecard.gesamtanzahlSchlaege()).thenReturn(0);
+	public void meldetZwischenergebnisVorErstemSchlag() throws Exception {
+		when(scorecard.anzahlSchlaegeGesamt()).thenReturn(0);
 		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("0 Schläge"));
+	}		
+	@Test
+	public void meldetZwischenergebnisNachErstemSchlag() throws Exception {
+		when(scorecard.anzahlSchlaegeGesamt()).thenReturn(1);
+		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
+	}		
+	@Test
+	public void meldetZwischenergebnisNachZweitemSchlag() throws Exception {
+		when(scorecard.anzahlSchlaegeGesamt()).thenReturn(2);
+		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("2 Schläge"));
 	}		
 }
