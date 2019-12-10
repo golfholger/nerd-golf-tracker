@@ -82,4 +82,8 @@ public class TrackerDriver {
 	public void assertThatAntwort(Matcher<String> matcher) {
 		assertThat(letzteAntwort(), matcher);
 	}
+	
+	public boolean isRunning() {
+		return this.process != null && this.process.isAlive(); 
+	}
 }
