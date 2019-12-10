@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-import de.itagile.golf.fehler.AnwendungSchließenException;
+import de.itagile.golf.fehler.AnwendungSchliessenException;
 
 public class Tracker {
 
@@ -13,11 +13,11 @@ public class Tracker {
 		this.startoperation = startoperation;
 	}
 	
-	public String reagiereAuf(String eingabe) throws AnwendungSchließenException {
+	public String reagiereAuf(String eingabe) throws AnwendungSchliessenException {
 		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
 	}
 
-	public String starte() throws AnwendungSchließenException {
+	public String starte() throws AnwendungSchliessenException {
 		return startoperation.fuehreAus(scorecard);
 	}
 

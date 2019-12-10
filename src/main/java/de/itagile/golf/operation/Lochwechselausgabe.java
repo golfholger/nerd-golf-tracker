@@ -2,7 +2,7 @@ package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
-import de.itagile.golf.fehler.AnwendungSchließenException;
+import de.itagile.golf.fehler.AnwendungSchliessenException;
 
 public class Lochwechselausgabe implements Operation {
 
@@ -13,7 +13,7 @@ public class Lochwechselausgabe implements Operation {
 	}
 
 	@Override
-	public String fuehreAus(Scorecard scorecard) throws AnwendungSchließenException {
+	public String fuehreAus(Scorecard scorecard) throws AnwendungSchliessenException {
 		return "Deine Schlagzahl wurde zurückgesetzt und Du bist " + folgeoperation.fuehreAus(scorecard);
 	}
 }

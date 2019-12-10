@@ -2,7 +2,7 @@ package de.itagile.golf;
 
 import java.io.IOException;
 
-import de.itagile.golf.fehler.AnwendungSchließenException;
+import de.itagile.golf.fehler.AnwendungSchliessenException;
 import de.itagile.golf.konsole.Konsole;
 import de.itagile.golf.operation.Lochausgabe;
 import de.itagile.golf.operation.Startausgabe;
@@ -21,7 +21,7 @@ public class Main {
 				String befehl = konsole.liesZeileEin();
 				konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
 			}
-		} catch (AnwendungSchließenException e) {
+		} catch (AnwendungSchliessenException e) {
 			konsole.println(e.getMessage()).beendeAusgabe();
 		}
 	}
