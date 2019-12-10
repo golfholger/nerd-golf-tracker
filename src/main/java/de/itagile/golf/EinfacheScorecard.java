@@ -21,4 +21,10 @@ public class EinfacheScorecard implements Scorecard {
 	public int aktuellesLoch() {
 		return aktuellesLoch;
 	}
+
+	@Override
+	public int gesamtanzahlSchlaege() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
