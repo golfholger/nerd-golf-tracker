@@ -1,5 +1,6 @@
 package de.itagile.golf;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.Matchers.isA;
 import static org.junit.Assert.assertThat;
 
@@ -14,6 +15,7 @@ import org.junit.runners.Parameterized.Parameters;
 import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
+import de.itagile.golf.operation.UnbekannteOperation;
 
 @RunWith(Parameterized.class)
 public class EinfacherIntepreterTest {
@@ -40,5 +42,15 @@ public class EinfacherIntepreterTest {
 	@Test
 	public void interpretiertBefehle() throws Exception {
 		assertThat(interpreter.interpretiere(befehl), isA(operation));
+	}
+	
+	@Test
+	public void hilfeBefehlTest() throws Exception {
+		assertThat(interpreter.interpretiere("Hilfe"), instanceOf(Hilfe.class));
+	}
+	
+	@Test
+	public void unbekannterBefehlTest() throws Exception {
+		assertThat(interpreter.interpretiere("Hlife"), instanceOf(UnbekannteOperation.class));
 	}
 }
