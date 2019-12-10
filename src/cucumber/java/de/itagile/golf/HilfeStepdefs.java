@@ -23,6 +23,11 @@ public class HilfeStepdefs {
 		tracker.gibEin("Hilfe");
 	}
 	
+	@When("ich die H aufrufe")
+	public void GebeShortcutEin() {
+		tracker.gibEin("H");
+	}
+	
 	@Then("steht in der ersten Zeile ein einleitender Text mit Zeilenumbruch")
 	public void ersteZeile() {
 		String[] zeilen = tracker.letzteAntwort().split(SystemProperties.LINE_SEPARATOR);

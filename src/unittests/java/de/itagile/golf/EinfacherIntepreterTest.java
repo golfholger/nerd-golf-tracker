@@ -16,6 +16,7 @@ import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
 import de.itagile.golf.operation.UnbekannteOperation;
+import de.itagile.golf.operation.Zwischenergebnisausgabe;
 
 @RunWith(Parameterized.class)
 public class EinfacherIntepreterTest {
@@ -34,6 +35,7 @@ public class EinfacherIntepreterTest {
 		Object[][] testData = new Object[][] {
 				{"Schlage Ball", Schlag.class},
 				{"Nächstes Loch", Lochwechsel.class},
+				{"Zwischenergebnis ausgeben", Zwischenergebnisausgabe.class},
 				{"Hilfe", Hilfe.class},
 				};
 		return Arrays.asList(testData);

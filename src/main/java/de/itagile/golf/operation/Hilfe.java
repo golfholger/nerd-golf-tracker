@@ -28,6 +28,6 @@ public class Hilfe implements Operation {
 	}
 
 	private String hilfeZeileFuer(Befehl befehl) {
-		return String.format(" * %s (...%s)", befehl.kommando(), befehl.beschreibung());
+		return String.format(" * [%s] %s (...%s)", befehl.shortcut(), befehl.kommando(), befehl.beschreibung());
 	}
 }

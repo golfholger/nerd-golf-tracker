@@ -23,8 +23,8 @@ public class HilfeTest {
 
 	@Test
 	public void zeigtBeschreibungZumKommando() throws Exception {
-		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")), 
-				containsString("Kommando (...Beschreibung)"));
+		assertThat(hilfetext(dummyBefehl("K", "Kommando", "Beschreibung")), 
+				containsString("[K] Kommando (...Beschreibung)"));
 	}
 
 	@Test
@@ -46,8 +46,9 @@ public class HilfeTest {
 		return hilfe.fuehreAus(null);
 	}
 
-	private Befehl dummyBefehl(String kommando, String beschreibung) {
+	private Befehl dummyBefehl(String shortcut, String kommando, String beschreibung) {
 		Befehl befehl = mock(Befehl.class);
+		when(befehl.shortcut()).thenReturn(shortcut);
 		when(befehl.kommando()).thenReturn(kommando);
 		when(befehl.beschreibung()).thenReturn(beschreibung);
 		return befehl;
