@@ -2,6 +2,7 @@ package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
+import de.itagile.golf.fehler.AnwendungSchließenException;
 
 public class Schlagzahlausgabe implements Operation {
 
@@ -12,7 +13,7 @@ public class Schlagzahlausgabe implements Operation {
 	}
 
 	@Override
-	public String fuehreAus(Scorecard scorecard) {
+	public String fuehreAus(Scorecard scorecard) throws AnwendungSchließenException {
 		String vorlage = this.getVorlage(scorecard);
 		return String.format(vorlage, 
 							 scorecard.anzahlSchlaegeAktuellesLoch(), 

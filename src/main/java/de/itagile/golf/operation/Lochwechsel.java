@@ -2,6 +2,7 @@ package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
+import de.itagile.golf.fehler.AnwendungSchließenException;
 
 public final class Lochwechsel implements Operation {
 	
@@ -11,7 +12,8 @@ public final class Lochwechsel implements Operation {
 		this.folgeoperation = folgeoperation;
 	}
 
-	public String fuehreAus(Scorecard scorecard) {
+	@Override
+	public String fuehreAus(Scorecard scorecard) throws AnwendungSchließenException {
 		scorecard.schliesseLochAb();
 		return folgeoperation.fuehreAus(scorecard);
 	}
