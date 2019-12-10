@@ -40,4 +40,15 @@ public class EinfacheScorecardTest {
 		scorecard.schliesseLochAb();
 		assertThat(scorecard.aktuellesLoch(), is(2));
 	}
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmErstenLochVorErstemSchlag() throws Exception {
+		assertThat(scorecard.gesamtanzahlSchlaege(), is(0));
+	}
+	
+	@Test
+	public void zaehleGesamtanzahlSchlaegeAmErstenLochNachErstemSchlag() throws Exception {
+		scorecard.erhoeheAnzahlSchlaege();
+		assertThat(scorecard.gesamtanzahlSchlaege(), is(1));
+	}	
 }

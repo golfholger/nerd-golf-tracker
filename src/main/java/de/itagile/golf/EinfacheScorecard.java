@@ -24,7 +24,6 @@ public class EinfacheScorecard implements Scorecard {
 
 	@Override
 	public int gesamtanzahlSchlaege() {
-		// TODO Auto-generated method stub
-		return 0;
+		return anzahlSchlaege;
 	}
 }

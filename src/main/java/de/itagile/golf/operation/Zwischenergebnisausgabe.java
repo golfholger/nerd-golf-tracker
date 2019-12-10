@@ -7,7 +7,8 @@ public class Zwischenergebnisausgabe implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
-		return "0 Schläge";
+		int schlaege = scorecard.gesamtanzahlSchlaege();
+		return "" + schlaege + (schlaege == 1 ? " Schlag" : " Schläge");
 	}
 
 }

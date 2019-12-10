@@ -19,4 +19,14 @@ public class ZwischenergebnisausgabeTest {
 		when(scorecard.gesamtanzahlSchlaege()).thenReturn(0);
 		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("0 Schläge"));
 	}		
+	@Test
+	public void meldetZwischenergebnisNachErstemSchlagAnErstemLoch() throws Exception {
+		when(scorecard.gesamtanzahlSchlaege()).thenReturn(1);
+		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
+	}		
+	@Test
+	public void meldetZwischenergebnisNachZweitemSchlagAnErstemLoch() throws Exception {
+		when(scorecard.gesamtanzahlSchlaege()).thenReturn(2);
+		assertThat(zwischenergebnisausgabe.fuehreAus(scorecard), containsString("2 Schläge"));
+	}		
 }
