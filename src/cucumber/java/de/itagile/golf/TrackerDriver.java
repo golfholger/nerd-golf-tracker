@@ -84,6 +84,6 @@ public class TrackerDriver {
 	}
 	
 	public boolean isRunning() {
-		return this.process != null && this.process.isAlive(); 
+		return this.process != null && this.process.exitValue() == 0; 
 	}
 }
