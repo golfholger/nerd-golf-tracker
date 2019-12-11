@@ -1,9 +1,7 @@
 package de.itagile.golf;
 
-import static java.lang.String.valueOf;
 import static org.hamcrest.Matchers.containsString;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
