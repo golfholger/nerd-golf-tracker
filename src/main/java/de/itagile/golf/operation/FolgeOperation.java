@@ -6,7 +6,6 @@ import java.util.List;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
-import de.itagile.golf.fehler.AnwendungSchliessenException;
 import de.itagile.golf.util.CollectionUtils;
 
 public class FolgeOperation implements Operation {
@@ -25,7 +24,7 @@ public class FolgeOperation implements Operation {
 	}
 
 	@Override
-	public String fuehreAus(Scorecard scorecard) throws AnwendungSchliessenException {
+	public String fuehreAus(Scorecard scorecard) {
 		List<String> rueckgabeWerte = new ArrayList<>();
 		for (Operation operation : folgeOperationen) {
 			String ausgabe = operation.fuehreAus(scorecard);
