@@ -14,13 +14,6 @@ public class Schlagzahlausgabe implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) throws AnwendungSchliessenException {
-		return createAusgabe(scorecard);
-	}
-
-	private String createAusgabe(Scorecard scorecard) throws AnwendungSchliessenException {
-		String vorlage =  "Du hast %d %s %s";
-		String ausgabe = String.format(vorlage, 
-				 scorecard.anzahlSchlaegeAktuellesLoch(), (scorecard.anzahlSchlaegeAktuellesLoch() == 1 ? "Schlag" : "Schläge"), folgeoperation.fuehreAus(scorecard));
-		return ausgabe;
+		return AusgabeUtil.getHitsStringFor(scorecard.anzahlSchlaegeAktuellesLoch()) + " " + folgeoperation.fuehreAus(scorecard);
 	}
 }
