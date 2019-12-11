@@ -11,5 +11,9 @@ public interface Scorecard {
 	int aktuellesLoch();
 
 	int anzahlSchlaegeGesamt();
+	
+	boolean programmBeendenPruefen();
+	
+	void programmBeendenAusfuehren();
 
 }

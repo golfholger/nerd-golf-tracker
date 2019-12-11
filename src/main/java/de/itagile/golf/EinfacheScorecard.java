@@ -5,6 +5,16 @@ public class EinfacheScorecard implements Scorecard {
 	private int aktuellesLoch = 1;
 	private int anzahlSchlaegeAktuellesLoch;
 	private int anzahlSchlaegeGesamt;
+	private boolean programmBeenden = false;
+	
+	
+	public boolean programmBeendenPruefen() {
+		return programmBeenden;
+	}
+	
+	public void programmBeendenAusfuehren() {
+		programmBeenden = true;
+	}
 
 	public void erhoeheAnzahlSchlaege() {
 		anzahlSchlaegeAktuellesLoch++;
