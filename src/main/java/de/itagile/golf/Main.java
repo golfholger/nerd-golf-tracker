@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import de.itagile.golf.fehler.AnwendungSchliessenException;
 import de.itagile.golf.konsole.Konsole;
+import de.itagile.golf.operation.FolgeOperation;
 import de.itagile.golf.operation.Lochausgabe;
 import de.itagile.golf.operation.Startausgabe;
 
@@ -12,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Konsole konsole = new Konsole();
 
-		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
+		FolgeOperation startoperation = new FolgeOperation(new Startausgabe(),new Lochausgabe());
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
 
 		try {

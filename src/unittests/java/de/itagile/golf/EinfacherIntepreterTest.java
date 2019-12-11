@@ -13,6 +13,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import de.itagile.golf.operation.Beenden;
+import de.itagile.golf.operation.FolgeOperation;
 import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
@@ -44,7 +45,11 @@ public class EinfacherIntepreterTest {
 	
 	@Test
 	public void interpretiertBefehle() throws Exception {
-		assertThat(interpreter.interpretiere(befehl), isA(operation));
+		Operation interpretedOperation = interpreter.interpretiere(befehl);
+		if(interpretedOperation instanceof FolgeOperation) {
+			interpretedOperation = ((FolgeOperation)interpretedOperation).getFirstOperation();
+		}
+		assertThat(interpretedOperation, isA(operation));
 	}
 	
 	@Test
