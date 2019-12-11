@@ -11,8 +11,11 @@ public class Zwischenergebnisausgabe implements Operation {
 	}
 
 	private String createAusgabe(Scorecard scorecard) {
+		String vorlage =  "Du hast %d %s.";
 		int schlaege = scorecard.anzahlSchlaegeGesamt();
-		return "Du hast insgesamt " + schlaege + (schlaege == 1 ? " Schlag" : " Schläge") + ".";
+		String ausgabe = String.format(vorlage, 
+				 schlaege, (schlaege == 1 ? "Schlag" : "Schläge"));
+		return ausgabe;
 	}
 
 }

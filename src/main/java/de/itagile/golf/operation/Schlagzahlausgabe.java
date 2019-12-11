@@ -16,12 +16,11 @@ public class Schlagzahlausgabe implements Operation {
 	public String fuehreAus(Scorecard scorecard) throws AnwendungSchliessenException {
 		return createAusgabe(scorecard);
 	}
-	
+
 	private String createAusgabe(Scorecard scorecard) throws AnwendungSchliessenException {
-		String vorlage =  "Du hast %d " + (scorecard.anzahlSchlaegeAktuellesLoch() == 1 ? "Schlag" : "Schläge") + " %s";
+		String vorlage =  "Du hast %d %s %s";
 		String ausgabe = String.format(vorlage, 
-				 scorecard.anzahlSchlaegeAktuellesLoch(), 
-				 folgeoperation.fuehreAus(scorecard));
+				 scorecard.anzahlSchlaegeAktuellesLoch(), (scorecard.anzahlSchlaegeAktuellesLoch() == 1 ? "Schlag" : "Schläge"), folgeoperation.fuehreAus(scorecard));
 		return ausgabe;
 	}
 }
