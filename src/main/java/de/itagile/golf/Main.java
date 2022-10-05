@@ -19,6 +19,7 @@ public class Main {
 		while (true) {
 			String befehl = konsole.liesZeileEin();
 			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
+
 		}
 	}
 }
