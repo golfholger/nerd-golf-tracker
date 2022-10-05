@@ -17,7 +17,7 @@ public class HilfeTest {
 
 	@Test
 	public void zeigtIntroAn() throws Exception {
-		assertThat(hilfetext(), containsString("Ich reagiere auf:"));
+		assertThat(hilfetext(), containsString("Ich reagiere auf:\n"));
 	}
 
 	@Test
