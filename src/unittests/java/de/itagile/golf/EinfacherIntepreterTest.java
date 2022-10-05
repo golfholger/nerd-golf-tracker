@@ -48,4 +48,5 @@ public class EinfacherIntepreterTest {
 	public void interpretiertBefehle() throws Exception {
 		assertThat(interpreter.interpretiere(befehl), isA(operation));
 	}
+
 }
