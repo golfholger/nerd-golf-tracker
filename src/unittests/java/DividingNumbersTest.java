@@ -38,6 +38,6 @@ private String fizzBuzz(int value){
       returnValue = String.valueOf(value);
     }
     return returnValue;
-    
+
   }
 }
