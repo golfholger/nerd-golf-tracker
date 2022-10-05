@@ -14,6 +14,6 @@ public class HinweisAusgabe implements Operation {
 
     @Override
     public String fuehreAus(Scorecard scorecard) {
-        return "Hinweis: Du hast eine unbekannte Eingabe getätigt. Ich zeige dir die Hilfe an.\nHilfe:\n" + this.folgeoperation.fuehreAus(scorecard);
+        return "Hinweis: Du hast eine unbekannte Eingabe getätigt. Ich zeige dir die Hilfe an.\n" + this.folgeoperation.fuehreAus(scorecard);
     }
 }
