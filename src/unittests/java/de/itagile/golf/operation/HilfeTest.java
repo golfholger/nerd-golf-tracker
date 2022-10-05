@@ -8,6 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import de.itagile.golf.util.SystemProperties;
 import org.junit.Test;
 
 import de.itagile.golf.Befehl;
@@ -17,7 +18,7 @@ public class HilfeTest {
 
 	@Test
 	public void zeigtIntroAn() throws Exception {
-		assertThat(hilfetext(), containsString("Ich reagiere auf:\n"));
+		assertThat(hilfetext(), containsString("Ich reagiere auf:"+ SystemProperties.LINE_SEPARATOR));
 	}
 
 	@Test
@@ -29,7 +30,7 @@ public class HilfeTest {
 	@Test
 	public void gibtProKommandoEineZeileAus() throws Exception {
 		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
-		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(2));
+		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(3));
 	}
 
 	private int anzahlZeilen(String string) {
