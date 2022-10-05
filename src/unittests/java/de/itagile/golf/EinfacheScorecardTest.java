@@ -39,4 +39,11 @@ public class EinfacheScorecardTest {
 		scorecard.schliesseLochAb();
 		assertThat(scorecard.aktuellesLoch(), is(2));
 	}
+
+    @Test
+    public void setztSchleageZurueckNachLochWechsel(){
+        scorecard.erhoeheAnzahlSchlaege();
+        scorecard.schliesseLochAb();
+        assertThat(scorecard.anzahlSchlaege(), is(0));
+    }
 }
