@@ -28,6 +28,12 @@ public class SchlaegeStepdefs {
         tracker.gibEin("Schlage Ball");
         tracker.gibEin("Nächstes Loch");
     }
+
+  @Wenn("ich nur die Enter-Taste gedrückt habe")
+  public void spieleAufEinemLochOhneKommando() {
+    schlaege = 0;
+    tracker.gibEin("");
+  }
 	
 	@Dann("zählt der NerdGolfTracker auch so viele Schläge")
     public void pruefeSchlaege() {
@@ -40,4 +46,10 @@ public class SchlaegeStepdefs {
 		tracker.assertThatAntwort(containsString(valueOf(1)));
 	}
 
+
+  @Dann("wird \"Schlage Ball\" ausgeführt")
+  public void pruefeSchlaegeZaehlenOhneKommando() {
+    tracker.gibEin("");
+    tracker.assertThatAntwort(containsString(valueOf(schlaege)));
+  }
 }
