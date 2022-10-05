@@ -19,7 +19,7 @@ public class SchlagzahlausgabeTest {
 	@Test
 	public void meldetEinenSchlag() throws Exception {
 		when(scorecard.anzahlSchlaege()).thenReturn(1);
-		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1. Schlag"));
 	}
 	
 	@Test
