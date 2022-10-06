@@ -31,7 +31,6 @@ public class SchlaegeStepdefs {
 
   @Wenn("ich nur die Enter-Taste gedrückt habe")
   public void spieleAufEinemLochOhneKommando() {
-    schlaege = 0;
     tracker.gibEin("");
   }
 	
@@ -49,7 +48,6 @@ public class SchlaegeStepdefs {
 
   @Dann("wird \"Schlage Ball\" ausgeführt")
   public void pruefeSchlaegeZaehlenOhneKommando() {
-    tracker.gibEin("");
-    tracker.assertThatAntwort(containsString(valueOf(schlaege)));
+    tracker.assertThatAntwort(containsString(valueOf(1)));
   }
 }

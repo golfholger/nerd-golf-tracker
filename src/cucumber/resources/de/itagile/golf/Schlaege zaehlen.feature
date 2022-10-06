@@ -15,7 +15,6 @@ Funktionalität: Schläge pro Loch zählen
         Wenn ich auf einem Loch gespielt habe
         Dann zählen die Schläge auf dem nächsten Loch wieder von 0 an
 
-    @in_arbeit
     Szenario: Default Befehl
         Wenn ich nur die Enter-Taste gedrückt habe
         Dann wird "Schlage Ball" ausgeführt
