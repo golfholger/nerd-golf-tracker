@@ -27,4 +27,9 @@ public class EinfacheScorecard implements Scorecard {
     public int aktuellesLoch() {
         return aktuellesLoch;
     }
+
+    public void geheLochZurück(){
+        if (aktuellesLoch > 1)
+            aktuellesLoch--;
+    }
 }
