@@ -14,4 +14,6 @@ public interface Scorecard {
 
 	void geheLochZurück();
 
+	int aktuellesPar();
+
 }
