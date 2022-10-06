@@ -14,10 +14,14 @@ public class Tracker {
 	}
 	
 	public String reagiereAuf(String eingabe) {
-		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
+		return interpretiere(eingabe).fuehreAus(scorecard);
 	}
 
-	public String starte() {
+    public Operation interpretiere(String eingabe) {
+        return interpreter.interpretiere(eingabe);
+    }
+
+    public String starte() {
 		return startoperation.fuehreAus(scorecard);
 	}
 
