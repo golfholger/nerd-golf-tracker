@@ -13,6 +13,8 @@ public class UndoTest {
     private Operation folgeoperation = mock(Operation.class);
     private UndoLetzterSchlag undoLetzterSchlag = new UndoLetzterSchlag(folgeoperation);
 
+    private UndoLochwechsel undoLochwechsel = new UndoLochwechsel(folgeoperation);
+
     @Test
     public void undoLetzterSchlag() {
         scorecard.erhoeheAnzahlSchlaege();
@@ -27,5 +29,12 @@ public class UndoTest {
         undoLetzterSchlag.fuehreAus(scorecard);
 
         Assert.assertEquals(0, scorecard.anzahlSchlaege());
+    }
+
+    @Test
+    public void undoLochwechsel() {
+        scorecard.schliesseLochAb();
+        undoLochwechsel.fuehreAus(scorecard);
+        Assert.assertEquals(1, scorecard.aktuellesLoch());
     }
 }

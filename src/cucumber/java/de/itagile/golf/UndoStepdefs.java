@@ -2,15 +2,14 @@ package de.itagile.golf;
 
 import cucumber.api.java.de.Dann;
 import cucumber.api.java.de.Wenn;
-import org.junit.Assert;
 
 import static org.hamcrest.Matchers.containsString;
 
-public class LetztenSchlagRueckgaengigMachenStepdefs {
+public class UndoStepdefs {
 
     private final TrackerDriver tracker;
 
-    public LetztenSchlagRueckgaengigMachenStepdefs(TrackerDriver tracker) {
+    public UndoStepdefs(TrackerDriver tracker) {
         this.tracker = tracker;
     }
 
@@ -25,11 +24,6 @@ public class LetztenSchlagRueckgaengigMachenStepdefs {
         pruefeSchlagAnzeige(erwarteteSchlagzahl);
     }
 
-    private void pruefeSchlagAnzeige(int erwarteteSchlagzahl) {
-        //assert
-        tracker.assertThatAntwort(containsString(erwarteteSchlagzahl + ". Schlag"));
-    }
-
     @Wenn("Eingabe {string} erfolgt und ich aktuell noch keinen Schlag gemacht habe")
     public void eingabeErfolgtUndIchAktuellNochKeinenSchlagGemachtHabe(String eingabe1) {
         tracker.gibEin(eingabe1);
@@ -38,5 +32,29 @@ public class LetztenSchlagRueckgaengigMachenStepdefs {
     @Dann("erwarte, dass kein Schlag rückgängig gemacht wird und sich die Schlagzahl nicht vermindert \\({int} nicht unterschreitet)")
     public void erwarteDassKeinSchlagRückgängigGemachtWirdUndSichDieSchlagzahlNichtVermindertNichtUnterschreitet(int erwarteteSchlagzahl) {
         pruefeSchlagAnzeige(erwarteteSchlagzahl);
+    }
+
+    @Dann("erwarte, dass der Lochwechsel rückgängig gemacht wird und Loch {int} angezeigt wird")
+    public void erwarteDassDerLochwechselRückgängigGemachtWirdUndLochAngezeigtWird(int loch) {
+        pruefeLochAnzeige(loch);
+    }
+
+    @Wenn("Eingabe {string} erfolgt und ich aktuell noch bei Loch {int} bin")
+    public void eingabeErfolgtUndIchAktuellNochBeiLochBin(String eingabe, int loch) {
+        tracker.gibEin(eingabe);
+    }
+
+    @Dann("erwarte, dass kein Lochwechsel rückgängig gemacht wird und weiterhin Loch {int} angezeigt wird")
+    public void erwarteDassKeinLochwechselRückgängigGemachtWirdUndWeiterhinLochAngezeigtWird(int loch) {
+        pruefeLochAnzeige(loch);
+    }
+
+    private void pruefeSchlagAnzeige(int erwarteteSchlagzahl) {
+        //assert
+        tracker.assertThatAntwort(containsString(erwarteteSchlagzahl + ". Schlag"));
+    }
+
+    private void pruefeLochAnzeige(int loch) {
+        tracker.assertThatAntwort(containsString(loch + ". Loch"));
     }
 }

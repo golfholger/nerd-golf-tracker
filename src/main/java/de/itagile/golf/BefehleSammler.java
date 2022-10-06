@@ -22,6 +22,8 @@ public class BefehleSammler {
 		ernte.add(new StandardBefehl());
         ernte.add(new ZwischenErgebnisBefehl());
         ernte.add(new ZwischenErgebnisAliasBefehl());
+		ernte.add(new UndoLochwechselBefehl());
+		ernte.add(new UndoLochwechselAliasBefehl());
 		return ernte;
 	}
 }

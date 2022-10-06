@@ -2,6 +2,9 @@ package de.itagile.golf;
 
 public class EinfacheScorecard implements Scorecard {
 
+    private static final int[] par = new int[]{4, 5, 3, 4, 3, 4, 5, 4, 3, 5, 4, 5, 4, 3, 4, 4, 3,
+        5};
+
     private int aktuellesLoch = 1;
     private int anzahlSchlaege;
 
@@ -35,5 +38,15 @@ public class EinfacheScorecard implements Scorecard {
     @Override
     public int zwischenErgebnis() {
         return zwischenErgebnis;
+    }
+
+    public void geheLochZurück(){
+        if (aktuellesLoch > 1)
+            aktuellesLoch--;
+    }
+
+    @Override
+    public int aktuellesPar() {
+        return par[aktuellesLoch() - 1];
     }
 }
