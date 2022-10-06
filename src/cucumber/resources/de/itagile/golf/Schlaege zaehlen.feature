@@ -19,3 +19,5 @@ Funktionalität: Schläge pro Loch zählen
         Wenn ich nur die Enter-Taste gedrückt habe
         Dann wird "Schlage Ball" ausgeführt
 
+
+
