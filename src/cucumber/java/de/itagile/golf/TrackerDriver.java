@@ -12,16 +12,12 @@ import org.hamcrest.Matcher;
 
 import de.itagile.golf.util.SystemProperties;
 
-import javax.sound.midi.Track;
-
 public class TrackerDriver {
 
 	private Process process;
 	private BufferedReader reader;
 	private PrintWriter writer;
 	private String letzteAntwort;
-
-	private Tracker tracker;
 	
     public void starte() {
         process = starteProzess();
@@ -85,4 +81,7 @@ public class TrackerDriver {
 		assertThat(letzteAntwort(), matcher);
 	}
 
+    public Process getProcess(){
+        return this.process;
+    }
 }
