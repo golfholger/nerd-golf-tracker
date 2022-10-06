@@ -37,6 +37,8 @@ public class EinfacherIntepreterTest {
 				{"", Schlag.class},
 				{"nächstes loch", Lochwechsel.class},
 				{"nächstes Loch", Lochwechsel.class},
+				{"nächstes Loch ", Lochwechsel.class},
+				{" nächstes Loch", Lochwechsel.class},
 				{"Nächstes loch", Lochwechsel.class},
 				{"s", Schlag.class},
 				{"S", Schlag.class},
