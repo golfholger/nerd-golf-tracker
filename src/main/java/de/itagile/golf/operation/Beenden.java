@@ -10,6 +10,6 @@ public class Beenden implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
-		return "Vielen Dank für die Nutzung von GolfTracker";
+		return "Vielen Dank für die Nutzung des Nerd-GolfTrackers.";
 	}
 }

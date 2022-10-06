@@ -15,7 +15,7 @@ public class BeendenBefehl implements Befehl {
 	}
 
 	public String beschreibung() {
-		return "Das Propgramm wird beendet";
+		return "Das Programm wird beendet.";
 	}
 
 }
