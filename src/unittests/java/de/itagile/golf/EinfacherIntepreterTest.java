@@ -3,9 +3,11 @@ package de.itagile.golf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isA;
 
+import de.itagile.golf.operation.Beenden;
 import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
+import de.itagile.golf.operation.UndoLetzterSchlag;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
@@ -31,6 +33,7 @@ public class EinfacherIntepreterTest {
 				{"Schlage Ball", Schlag.class},
 				{"Nächstes Loch", Lochwechsel.class},
 				{"Hilfe", Hilfe.class},
+				{"hilfe", Hilfe.class},
 				{"schlage ball", Schlag.class},
 				{"Schlage ball", Schlag.class},
 				{"schlage Ball", Schlag.class},
@@ -38,7 +41,19 @@ public class EinfacherIntepreterTest {
 				{"nächstes loch", Lochwechsel.class},
 				{"nächstes Loch", Lochwechsel.class},
 				{"Nächstes loch", Lochwechsel.class},
-				{"hilfe", Hilfe.class},
+				{"s", Schlag.class},
+				{"S", Schlag.class},
+				{"h", Hilfe.class},
+				{"H", Hilfe.class},
+				{"n", Lochwechsel.class},
+				{"N", Lochwechsel.class},
+				{"us", UndoLetzterSchlag.class},
+				{"US", UndoLetzterSchlag.class},
+				{"Us", UndoLetzterSchlag.class},
+				{"uS", UndoLetzterSchlag.class},
+				{"b", Beenden.class},
+				{"B", Beenden.class},
+
 		};
 		return Arrays.asList(testData);
 	}

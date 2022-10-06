@@ -3,16 +3,15 @@ package de.itagile.golf.operation;
 import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import de.itagile.golf.util.SystemProperties;
-import org.junit.Test;
-
 import de.itagile.golf.Befehl;
 import de.itagile.golf.BefehleSammler;
+import de.itagile.golf.util.SystemProperties;
+import org.junit.Test;
 
 public class HilfeTest {
 
@@ -23,13 +22,18 @@ public class HilfeTest {
 
 	@Test
 	public void zeigtBeschreibungZumKommando() throws Exception {
-		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")), 
+		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")),
 				containsString("Kommando (...Beschreibung)"));
+		containsString("Alias");
 	}
 
 	@Test
 	public void gibtProKommandoEineZeileAus() throws Exception {
-		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
+		Befehl befehl1 = mock(Befehl.class);
+		Befehl befehl2 = mock(Befehl.class);
+		when(befehl1.showInHelp()).thenReturn(true);
+		when(befehl2.showInHelp()).thenReturn(true);
+		String hilfetextFuerZweiBefehle = hilfetext(befehl1, befehl2);
 		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(3));
 	}
 
@@ -50,6 +54,7 @@ public class HilfeTest {
 		Befehl befehl = mock(Befehl.class);
 		when(befehl.kommando()).thenReturn(kommando);
 		when(befehl.beschreibung()).thenReturn(beschreibung);
+		when(befehl.showInHelp()).thenReturn(true);
 		return befehl;
 	}
 }

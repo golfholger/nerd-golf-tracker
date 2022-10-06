@@ -16,7 +16,7 @@ public class LochwechselBefehl implements Befehl {
 	}
 
 	public String beschreibung() {
-		return "dann gehe ich ein Loch weiter";
+		return "dann gehe ich ein Loch weiter. Alias: n";
 	}
 
 }
