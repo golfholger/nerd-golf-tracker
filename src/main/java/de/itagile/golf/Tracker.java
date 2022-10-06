@@ -25,4 +25,8 @@ public class Tracker {
 		this.startoperation = startoperation;
 	}
 
+	public Scorecard getScorecard() {
+		return scorecard;
+	}
+
 }

@@ -4,6 +4,8 @@ public interface Scorecard {
 
 	void erhoeheAnzahlSchlaege();
 
+	void reduziereAnzahlSchlaege();
+
 	int anzahlSchlaege();
 
 	void schliesseLochAb();
