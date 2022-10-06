@@ -7,5 +7,5 @@ Funktionalität: Unbekannte Eingabe abfangen
 
     Beispiele:
       |x|
-      |Hallo Welt|
-      ||
+      | Hallo Welt |
+      | test       |
