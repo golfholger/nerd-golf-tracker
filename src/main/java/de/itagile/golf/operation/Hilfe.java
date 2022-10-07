@@ -4,8 +4,8 @@ import de.itagile.golf.Befehl;
 import de.itagile.golf.BefehleSammler;
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
-import de.itagile.golf.util.CollectionUtils;
 import de.itagile.golf.util.SystemProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,9 @@ public class Hilfe implements Operation {
 				hilfeTexte.add(hilfeZeileFuer(befehl));
 			}
 		}
-		return "Ich reagiere auf:"+SystemProperties.LINE_SEPARATOR + CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
+		final String collected = String.join(SystemProperties.LINE_SEPARATOR, hilfeTexte);
+
+		return "Ich reagiere auf:"+SystemProperties.LINE_SEPARATOR + collected;
 	}
 
 	private String hilfeZeileFuer(Befehl befehl) {
