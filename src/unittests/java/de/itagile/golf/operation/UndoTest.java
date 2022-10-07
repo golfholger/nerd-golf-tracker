@@ -9,11 +9,11 @@ import org.junit.Test;
 import static org.mockito.Mockito.mock;
 
 public class UndoTest {
-    private Scorecard scorecard = new EinfacheScorecard();
-    private Operation folgeoperation = mock(Operation.class);
-    private UndoLetzterSchlag undoLetzterSchlag = new UndoLetzterSchlag(folgeoperation);
+    private final Scorecard scorecard = new EinfacheScorecard();
+    private final Operation folgeoperation = mock(Operation.class);
+    private final UndoLetzterSchlag undoLetzterSchlag = new UndoLetzterSchlag(folgeoperation);
 
-    private UndoLochwechsel undoLochwechsel = new UndoLochwechsel(folgeoperation);
+    private final UndoLochwechsel undoLochwechsel = new UndoLochwechsel(folgeoperation);
 
     @Test
     public void undoLetzterSchlag() {
@@ -33,8 +33,11 @@ public class UndoTest {
 
     @Test
     public void undoLochwechsel() {
+        scorecard.erhoeheAnzahlSchlaege();
+        scorecard.erhoeheAnzahlSchlaege();
         scorecard.schliesseLochAb();
         undoLochwechsel.fuehreAus(scorecard);
         Assert.assertEquals(1, scorecard.aktuellesLoch());
+        Assert.assertEquals(2, scorecard.anzahlSchlaege());
     }
 }
