@@ -1,14 +1,13 @@
 package de.itagile.golf.operation;
 
-import de.itagile.golf.BefehleSammler;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.mockito.Mockito.mock;
+
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.mockito.Mockito.mock;
 
 public class UnbekannteEingabeTest {
 
@@ -27,6 +26,6 @@ public class UnbekannteEingabeTest {
     }
 
     private String hinweisText(){
-        return new HinweisAusgabe(new Hilfe(new BefehleSammler())).fuehreAus(scorecard);
+        return new HinweisAusgabe(new Hilfe()).fuehreAus(scorecard);
     }
 }

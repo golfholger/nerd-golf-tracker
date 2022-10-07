@@ -5,7 +5,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
-import de.itagile.golf.konsole.KonsoleEncoding;
 
 public class KonsoleEncodingTest {
 	
