@@ -8,7 +8,7 @@ import cucumber.api.java.de.Wenn;
 
 public class SchlaegeStepdefs {
 
-	private TrackerDriver tracker;
+	private final TrackerDriver tracker;
 	private int schlaege;
 
 	public SchlaegeStepdefs(TrackerDriver tracker) {
@@ -22,7 +22,15 @@ public class SchlaegeStepdefs {
             tracker.gibEin("Schlage Ball");
         }
     }
-	
+
+    @Wenn("ich den Ball {int}-mal schlage mit Alias")
+    public void schlageBallAlias(int schlaege) {
+        this.schlaege = schlaege;
+        while (schlaege-- > 0) {
+            tracker.gibEin("s");
+        }
+    }
+
 	@Wenn("ich auf einem Loch gespielt habe")
     public void spieleAufEinemLochUndGeheWeiter() {
         tracker.gibEin("Schlage Ball");

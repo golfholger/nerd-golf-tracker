@@ -13,9 +13,9 @@ public class HilfeStepdefs {
 		this.tracker = tracker;
 	}
 
-	@Wenn("ich die Hilfe aufrufe")
-	public void rufeHilfeAuf() {
-		tracker.gibEin("Hilfe");
+	@Wenn("ich die Hilfe aufrufe mit {string}")
+	public void rufeHilfeAuf(String kommando) {
+		tracker.gibEin(kommando);
 	}
 
 	@Dann("listet der NerdGolfTracker einen Eintrag zu {string} auf")

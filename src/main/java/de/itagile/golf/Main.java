@@ -2,6 +2,7 @@ package de.itagile.golf;
 
 import java.io.IOException;
 
+import de.itagile.golf.befehl.BeendenAliasBefehl;
 import de.itagile.golf.befehl.BeendenBefehl;
 import de.itagile.golf.konsole.Konsole;
 import de.itagile.golf.operation.Lochausgabe;
@@ -28,6 +29,7 @@ public class Main {
 
     private static boolean beendet(String befehl) {
         final String beendenBefehl = new BeendenBefehl().kommando();
-        return beendenBefehl.equalsIgnoreCase(befehl);
+        final String beendenAlias = new BeendenAliasBefehl().kommando();
+        return beendenBefehl.equalsIgnoreCase(befehl) || beendenAlias.equals(befehl);
     }
 }

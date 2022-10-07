@@ -10,7 +10,15 @@ Funktionalität: Schläge pro Loch zählen
             |1|
             |2|
 
-    @in_arbeit
+  Szenariogrundriss: Schläge auf einem Loch zählen mit Alias
+    Wenn ich den Ball <x>-mal schlage mit Alias
+    Dann zählt der NerdGolfTracker auch so viele Schläge
+
+    Beispiele:
+      |x|
+      |1|
+      |2|
+
     Szenario: Lochwechsel
         Wenn ich auf einem Loch gespielt habe
         Dann zählen die Schläge auf dem nächsten Loch wieder von 0 an
