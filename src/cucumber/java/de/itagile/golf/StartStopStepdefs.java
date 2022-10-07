@@ -14,9 +14,9 @@ public class StartStopStepdefs {
         this.tracker = tracker;
     }
 
-    @Wenn("ich 'beenden' eingebe")
-    public void rufeBeendenAuf() {
-        tracker.gibEin("beenden");
+    @Wenn("ich {string} eingebe")
+    public void rufeBeendenAuf(String kommando) {
+        tracker.gibEin(kommando);
     }
 
     @Dann("wird ausgegeben: 'Vielen Dank für die Nutzung des Nerd-GolfTrackers.' und die Applikation wird beendet")
