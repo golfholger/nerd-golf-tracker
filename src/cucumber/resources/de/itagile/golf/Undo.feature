@@ -23,6 +23,11 @@ Funktionalität: Undo ermöglichen
       | Nächstes Loch    | Undo Lochwechsel  |
       | n    | ul   |
 
+  Szenario: Letzten Lochwechsel rückgängig machen auf Loch größer 1
+    Wenn "Undo Lochwechsel" erfolgt
+    Dann erwarte, dass der Lochwechsel rückgängig gemacht wird und das Loch 1 angezeigt wird
+    Und  die für das Loch benötigten Schläge (0) angezeigt werden
+
 
   Szenario: Letzten Lochwechsel rückgängig machen und dabei Werte kleiner 1 verhindern
     Wenn Eingabe "Undo Lochwechsel" erfolgt und ich aktuell noch bei Loch 1 bin

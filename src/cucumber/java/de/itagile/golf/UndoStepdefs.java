@@ -1,6 +1,7 @@
 package de.itagile.golf;
 
 import cucumber.api.java.de.Dann;
+import cucumber.api.java.de.Und;
 import cucumber.api.java.de.Wenn;
 
 import static org.hamcrest.Matchers.containsString;
@@ -56,5 +57,20 @@ public class UndoStepdefs {
 
     private void pruefeLochAnzeige(int loch) {
         tracker.assertThatAntwort(containsString(loch + ". Loch"));
+    }
+
+    @Wenn("{string} erfolgt")
+    public void erfolgt(String befehl) {
+        tracker.gibEin(befehl);
+    }
+
+    @Dann("erwarte, dass der Lochwechsel rückgängig gemacht wird und das Loch {int} angezeigt wird")
+    public void erwarteDassDerLochwechselRückgängigGemachtWirdUndDasLochAngezeigtWird(int loch) {
+        tracker.assertThatAntwort(containsString(loch + ". Loch"));
+    }
+
+    @Und("die für das Loch benötigten Schläge \\({int}) angezeigt werden")
+    public void dieFürDasLochBenötigtenSchlägeAngezeigtWerden(int erwarteteSchlagzahl) {
+        tracker.assertThatAntwort(containsString(erwarteteSchlagzahl + ". Schlag"));
     }
 }
