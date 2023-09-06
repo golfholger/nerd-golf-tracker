@@ -7,7 +7,6 @@ public class Lochausgabe implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
-		return "auf dem " + scorecard.aktuellesLoch() + ". Loch. (Par " + scorecard.aktuellesPar()
-				+ ")";
+		return "auf dem " + scorecard.aktuellesLoch() + ".Loch.";
 	}
 }

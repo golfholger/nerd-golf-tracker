@@ -2,8 +2,6 @@ package de.itagile.golf;
 
 import java.io.IOException;
 
-import de.itagile.golf.befehl.BeendenAliasBefehl;
-import de.itagile.golf.befehl.BeendenBefehl;
 import de.itagile.golf.konsole.Konsole;
 import de.itagile.golf.operation.Lochausgabe;
 import de.itagile.golf.operation.Startausgabe;
@@ -20,16 +18,7 @@ public class Main {
 		
 		while (true) {
 			String befehl = konsole.liesZeileEin();
-            final String reaktion = tracker.reagiereAuf(befehl);
-            konsole.println(reaktion).beendeAusgabe();
-
-            if (beendet(befehl)) break;
-        }
+			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
+		}
 	}
-
-    private static boolean beendet(String befehl) {
-        final String beendenBefehl = new BeendenBefehl().kommando();
-        final String beendenAlias = new BeendenAliasBefehl().kommando();
-        return beendenBefehl.equalsIgnoreCase(befehl) || beendenAlias.equals(befehl);
-    }
 }

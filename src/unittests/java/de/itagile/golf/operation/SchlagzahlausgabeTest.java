@@ -5,7 +5,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
@@ -19,7 +19,7 @@ public class SchlagzahlausgabeTest {
 	@Test
 	public void meldetEinenSchlag() throws Exception {
 		when(scorecard.anzahlSchlaege()).thenReturn(1);
-		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1. Schlag"));
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
 	}
 	
 	@Test

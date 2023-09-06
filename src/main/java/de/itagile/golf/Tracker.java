@@ -14,23 +14,15 @@ public class Tracker {
 	}
 	
 	public String reagiereAuf(String eingabe) {
-		return interpretiere(eingabe).fuehreAus(scorecard);
+		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
 	}
 
-    public Operation interpretiere(String eingabe) {
-        return interpreter.interpretiere(eingabe);
-    }
-
-    public String starte() {
+	public String starte() {
 		return startoperation.fuehreAus(scorecard);
 	}
 
 	public void setStartoperation(Operation startoperation) {
 		this.startoperation = startoperation;
-	}
-
-	public Scorecard getScorecard() {
-		return scorecard;
 	}
 
 }

@@ -16,7 +16,7 @@ public class SchlagBefehl implements Befehl {
 	}
 
 	public String beschreibung() {
-		return "dann erhöhe ich um einen Schlag. Alias: s";
+		return "dann zähle ich mit";
 	}
 
 }

@@ -80,8 +80,4 @@ public class TrackerDriver {
 	public void assertThatAntwort(Matcher<String> matcher) {
 		assertThat(letzteAntwort(), matcher);
 	}
-
-    public Process getProcess(){
-        return this.process;
-    }
 }

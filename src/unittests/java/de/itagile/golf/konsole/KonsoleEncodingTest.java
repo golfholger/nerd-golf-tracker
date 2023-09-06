@@ -3,8 +3,9 @@ package de.itagile.golf.konsole;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
+import de.itagile.golf.konsole.KonsoleEncoding;
 
 public class KonsoleEncodingTest {
 	
