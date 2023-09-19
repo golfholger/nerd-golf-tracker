@@ -5,9 +5,11 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.startsWith;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import de.itagile.golf.util.SystemProperties;
 import org.junit.jupiter.api.Test;
 
 import de.itagile.golf.Befehl;
@@ -17,7 +19,8 @@ public class HilfeTest {
 
 	@Test
 	public void zeigtIntroAn() throws Exception {
-		assertThat(hilfetext(), containsString("Ich reagiere auf:"));
+		assertThat(hilfetext(dummyBefehl("", "")),
+				startsWith("Ich reagiere auf:" + LINE_SEPARATOR));
 	}
 
 	@Test
@@ -29,7 +32,7 @@ public class HilfeTest {
 	@Test
 	public void gibtProKommandoEineZeileAus() throws Exception {
 		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
-		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(2));
+		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(3));
 	}
 
 	private int anzahlZeilen(String string) {
@@ -39,9 +42,9 @@ public class HilfeTest {
 
 	private String hilfetext(Befehl... befehle) {
 		BefehleSammler sammler = mock(BefehleSammler.class);
-		
-		Hilfe hilfe = new Hilfe(sammler);
 		when(sammler.sammle()).thenReturn(asList(befehle));
+
+		Hilfe hilfe = new Hilfe(sammler);
 		return hilfe.fuehreAus(null);
 	}
 

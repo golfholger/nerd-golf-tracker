@@ -21,10 +21,11 @@ public class Hilfe implements Operation {
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
 		List<String> hilfeTexte = new ArrayList<>();
+		hilfeTexte.add("Ich reagiere auf:");
 		for (Befehl befehl : sammler.sammle()) {
 			hilfeTexte.add(hilfeZeileFuer(befehl));
 		}
-		return "Ich reagiere auf: " + CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
+		return CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
 	}
 
 	private String hilfeZeileFuer(Befehl befehl) {
