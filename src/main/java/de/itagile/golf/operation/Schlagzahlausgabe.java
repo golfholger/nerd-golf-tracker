@@ -5,17 +5,20 @@ import de.itagile.golf.Scorecard;
 
 public class Schlagzahlausgabe implements Operation {
 
-	private Operation folgeoperation;
+    private Operation folgeoperation;
 
-	public Schlagzahlausgabe(Operation folgeoperation) {
-		this.folgeoperation = folgeoperation;
-	}
+    public Schlagzahlausgabe(Operation folgeoperation) {
+        this.folgeoperation = folgeoperation;
+    }
 
-	@Override
-	public String fuehreAus(Scorecard scorecard) {
-		String vorlage = "Du hast %d Schlag %s";
-		return String.format(vorlage, 
-							 scorecard.anzahlSchlaege(), 
-							 folgeoperation.fuehreAus(scorecard));
-	}
+    @Override
+    public String fuehreAus(Scorecard scorecard) {
+        int anzahlSchlaege = scorecard.anzahlSchlaege();
+        String schlagNomen = anzahlSchlaege == 1 ? "Schlag" : "Schläge";
+        String vorlage = "Du hast %d %s %s";
+        return String.format(vorlage,
+                anzahlSchlaege,
+                schlagNomen,
+                folgeoperation.fuehreAus(scorecard));
+    }
 }
