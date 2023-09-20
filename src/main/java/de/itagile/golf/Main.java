@@ -8,10 +8,10 @@ import de.itagile.golf.operation.Startausgabe;
 import java.io.IOException;
 
 public class Main {
-	
+
 	public static void main(String[] args) throws IOException {
 		Konsole konsole = new Konsole();
-		
+
 		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
 
@@ -21,9 +21,13 @@ public class Main {
 		while (isRunning) {
 			String befehl = konsole.liesZeileEin();
 			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
-			if (new BeendenBefehl().kommando().equals(befehl)) {
+			if (istBeenden(befehl)) {
 				isRunning = false;
 			}
 		}
+	}
+
+	private static boolean istBeenden(String befehl) {
+		return new BeendenBefehl().kommando().equals(befehl);
 	}
 }

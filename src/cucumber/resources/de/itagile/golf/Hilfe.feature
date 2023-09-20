@@ -10,3 +10,4 @@ Funktionalität: Hilfe
             |Schlage Ball|
             |Nächstes Loch|
             |Hilfe|
+            |Beenden|

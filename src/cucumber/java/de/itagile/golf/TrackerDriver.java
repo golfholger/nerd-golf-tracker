@@ -5,7 +5,10 @@ import org.hamcrest.Matcher;
 
 import java.io.*;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.awaitility.Awaitility.await;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 public class TrackerDriver {
 
@@ -13,7 +16,7 @@ public class TrackerDriver {
 	private BufferedReader reader;
 	private PrintWriter writer;
 	private String letzteAntwort;
-	
+
     public void starte() {
         process = starteProzess();
         reader = readerFor(process);
@@ -36,7 +39,7 @@ public class TrackerDriver {
 	private Process starteProzess() {
 		try {
 			String command = String.format(
-					"java -Dfile.encoding=%s -jar %s", 
+					"java -Dfile.encoding=%s -jar %s",
 					SystemProperties.FILE_ENCODING,
 					"build/libs/nerd-golf-tracker.jar");
 			return Runtime.getRuntime().exec(
@@ -50,7 +53,7 @@ public class TrackerDriver {
 		writer.println(anweisung);
 		speichereAntwort();
 	}
-	
+
 	public String letzteAntwort() {
 		return letzteAntwort;
 	}
@@ -78,5 +81,11 @@ public class TrackerDriver {
 
 	public boolean isRunning() {
 		return this.process.isAlive();
+	}
+
+	public void assertThatRunning(boolean isRunning) {
+		await().atMost(2, SECONDS).untilAsserted(() ->
+			assertThat(isRunning(), is(isRunning))
+		);
 	}
 }

@@ -2,10 +2,8 @@ package de.itagile.golf;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.awaitility.Awaitility;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class BeendenStepdefs {
 
@@ -23,10 +21,9 @@ public class BeendenStepdefs {
         tracker.assertThatAntwort(containsString("Wir sehen uns am 19. Loch!"));
     }
 
-    @Then("ist die Applikation beendet")
+    @Then("die Applikation ist beendet")
     public void pruefeBeendetesProgramm() {
-        Awaitility.await().untilAsserted(() ->
-            assertFalse(tracker.isRunning())
-        );
+        tracker.assertThatRunning(false);
     }
+
 }
