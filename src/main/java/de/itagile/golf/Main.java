@@ -10,24 +10,6 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Konsole konsole = new Konsole();
-
-		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
-		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
-
-		konsole.println(tracker.starte()).beendeAusgabe();
-
-		boolean isRunning = true;
-		while (isRunning) {
-			String befehl = konsole.liesZeileEin();
-			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
-			if (istBeenden(befehl)) {
-				isRunning = false;
-			}
-		}
-	}
-
-	private static boolean istBeenden(String befehl) {
-		return new BeendenBefehl().kommando().equals(befehl);
+		new Spiel().start();
 	}
 }
