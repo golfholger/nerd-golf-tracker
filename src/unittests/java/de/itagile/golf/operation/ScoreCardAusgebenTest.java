@@ -43,9 +43,10 @@ public class ScoreCardAusgebenTest {
 
         int index = 1;
         for (Integer lochResult : results) {
+            String expectedLochString = "Loch: " + index + " Schläge: " + lochResult + SystemProperties.LINE_SEPARATOR;
             assertThat(
                     scoreCardAusgeben.fuehreAus(scorecard),
-                    containsString("Loch: " + index + " Schläge: " + lochResult + SystemProperties.LINE_SEPARATOR)
+                    containsString(expectedLochString)
             );
             index++;
         }
