@@ -1,7 +1,6 @@
 # language: de
 Funktionalität: Scorecard anzeigen
 
-  @in_arbeit
   Szenario: direkt nach dem Start
     Gegeben seien folgende Schläge
       | 1 |

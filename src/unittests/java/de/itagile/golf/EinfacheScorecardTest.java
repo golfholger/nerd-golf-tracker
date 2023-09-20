@@ -1,8 +1,9 @@
 package de.itagile.golf;
 
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.Matchers.is;
+
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 public class EinfacheScorecardTest {
 
@@ -38,5 +39,12 @@ public class EinfacheScorecardTest {
 	public void zaehltAktuellesLoch() throws Exception {
 		scorecard.schliesseLochAb();
 		assertThat(scorecard.aktuellesLoch(), is(2));
+	}
+
+	@Test
+	public void foo() {
+		scorecard.erhoeheAnzahlSchlaege();
+		scorecard.schliesseLochAb();
+		assertThat(scorecard.anzahlSchlaegeProLoch().get(0), is(1));
 	}
 }

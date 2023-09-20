@@ -6,3 +6,4 @@ Szenario: Unbekannte Eingabe
     Dann bekomme ich einen Hinweis auf die Hilfe
 
 
+#

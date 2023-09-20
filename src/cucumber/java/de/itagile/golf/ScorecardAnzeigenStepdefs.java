@@ -41,7 +41,7 @@ public class ScorecardAnzeigenStepdefs {
 
     private String scorecardAusgabe() {
         return IntStream.range(0, schlaegeProLoch.size())
-                .mapToObj(i -> "Loch %d: %d".formatted(i, schlaegeProLoch.get(i)))
+                .mapToObj(i -> "Loch: %d Schläge: %d".formatted(i + 1, schlaegeProLoch.get(i)))
                 .collect(joining(LINE_SEPARATOR));
     }
 

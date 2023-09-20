@@ -1,9 +1,6 @@
 package de.itagile.golf;
 
-import de.itagile.golf.befehl.BeendenBefehl;
-import de.itagile.golf.befehl.HilfeBefehl;
-import de.itagile.golf.befehl.LochwechselBefehl;
-import de.itagile.golf.befehl.SchlagBefehl;
+import de.itagile.golf.befehl.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +13,7 @@ public class BefehleSammler {
 		ernte.add(new LochwechselBefehl());
 		ernte.add(new HilfeBefehl());
 		ernte.add(new BeendenBefehl());
+		ernte.add(new ScorecardBefehl());
 		return ernte;
 	}
 }
