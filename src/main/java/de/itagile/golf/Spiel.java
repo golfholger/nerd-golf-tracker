@@ -27,6 +27,6 @@ public class Spiel {
     }
 
     public boolean istBeenden(String befehl) {
-        return new BeendenBefehl().kommando().equals(befehl);
+        return new BeendenBefehl().kommando().toLowerCase().equals(befehl.toLowerCase());
     }
 }
