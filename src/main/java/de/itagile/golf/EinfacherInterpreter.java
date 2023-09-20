@@ -14,6 +14,6 @@ public class EinfacherInterpreter implements Interpreter {
 
 	@Override
 	public Operation interpretiere(String string) {
-		return operationen.get(string);
+		return operationen.containsKey(string) ? operationen.get(string) : operationen.get("Hilfe");
 	}
 }

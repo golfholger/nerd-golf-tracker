@@ -14,7 +14,7 @@ public class Tracker {
 	}
 	
 	public String reagiereAuf(String eingabe) {
-		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
+			return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
 	}
 
 	public String starte() {
