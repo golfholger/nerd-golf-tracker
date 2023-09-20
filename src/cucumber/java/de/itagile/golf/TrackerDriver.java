@@ -1,16 +1,11 @@
 package de.itagile.golf;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-
+import de.itagile.golf.util.SystemProperties;
 import org.hamcrest.Matcher;
 
-import de.itagile.golf.util.SystemProperties;
+import java.io.*;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TrackerDriver {
 
@@ -79,5 +74,9 @@ public class TrackerDriver {
 
 	public void assertThatAntwort(Matcher<String> matcher) {
 		assertThat(letzteAntwort(), matcher);
+	}
+
+	public boolean isRunning() {
+		return this.process.isAlive();
 	}
 }

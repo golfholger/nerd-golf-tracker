@@ -1,10 +1,11 @@
 package de.itagile.golf;
 
-import java.io.IOException;
-
+import de.itagile.golf.befehl.BeendenBefehl;
 import de.itagile.golf.konsole.Konsole;
 import de.itagile.golf.operation.Lochausgabe;
 import de.itagile.golf.operation.Startausgabe;
+
+import java.io.IOException;
 
 public class Main {
 	
@@ -15,10 +16,14 @@ public class Main {
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
 
 		konsole.println(tracker.starte()).beendeAusgabe();
-		
-		while (true) {
+
+		boolean isRunning = true;
+		while (isRunning) {
 			String befehl = konsole.liesZeileEin();
 			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
+			if (new BeendenBefehl().kommando().equals(befehl)) {
+				isRunning = false;
+			}
 		}
 	}
 }
