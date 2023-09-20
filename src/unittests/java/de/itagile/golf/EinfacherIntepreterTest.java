@@ -19,11 +19,14 @@ public class EinfacherIntepreterTest {
 	private Interpreter interpreter = new EinfacherInterpreter();
 
 	private static Stream<Arguments> befehlParameter() {
-		return Stream.of(
+	    return Stream.of(
 				Arguments.of("Schlage Ball", Schlag.class),
 				Arguments.of("Nächstes Loch", Lochwechsel.class),
-				Arguments.of("Hilfe", Hilfe.class)
-		);
+				Arguments.of("Hilfe", Hilfe.class),
+				Arguments.of("schlage ball", Schlag.class),
+				Arguments.of("nächstes loch", Lochwechsel.class),
+				Arguments.of("hilfe", Hilfe.class)
+	    );
 	}
 
 	@ParameterizedTest
