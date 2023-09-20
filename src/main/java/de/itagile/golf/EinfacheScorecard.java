@@ -1,5 +1,8 @@
 package de.itagile.golf;
 
+import java.util.Collections;
+import java.util.List;
+
 public class EinfacheScorecard implements Scorecard {
 
 	private int aktuellesLoch = 1;
@@ -20,5 +23,10 @@ public class EinfacheScorecard implements Scorecard {
 
 	public int aktuellesLoch() {
 		return aktuellesLoch;
+	}
+
+	@Override
+	public List<Integer> anzahlSchlaegeProLoch() {
+		return Collections.emptyList();
 	}
 }

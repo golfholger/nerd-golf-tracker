@@ -1,5 +1,7 @@
 package de.itagile.golf;
 
+import java.util.List;
+
 public interface Scorecard {
 
 	void erhoeheAnzahlSchlaege();
@@ -9,5 +11,7 @@ public interface Scorecard {
 	void schliesseLochAb();
 
 	int aktuellesLoch();
+
+	List<Integer> anzahlSchlaegeProLoch();
 
 }
