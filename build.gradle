@@ -9,6 +9,16 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'de.itagile.golf.Main'
+}
+
 jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
 }
@@ -30,18 +40,14 @@ test {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+	testImplementation 'org.junit.platform:junit-platform-launcher:1.10.1'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
-    
-    // Eclipse Workaround. Eclipse needs an old junit Version.
     testRuntimeOnly 'junit:junit:4.13.2'
-    
+    testImplementation 'org.awaitility:awaitility:4.2.0'
     testImplementation 'org.mockito:mockito-core:5.+'
-            
-    testImplementation 'io.cucumber:cucumber-java:7.11.+'
-    testImplementation 'io.cucumber:cucumber-picocontainer:7.11.+'
-    
-    
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-picocontainer:7.14.0'
 }
 
 configurations {
@@ -50,23 +56,15 @@ configurations {
     }
 }
 
-task cucumber() {
-    dependsOn assemble, test
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = [
-              '--plugin', 'pretty',
-              '--plugin', 'html:build/reports/tests/cucumber-report.html', 
-              '--glue', 'de.itagile.golf',
-              '--tags', 'not @ignore', 
-              'src/cucumber/resources'
-              ]
-        }
-    }
+tasks.register('cucumber', JavaExec) {
+    dependsOn 'assemble', 'test'
+    mainClass.set("io.cucumber.core.cli.Main")
+    classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+    args = [
+        '--plugin', 'pretty',
+        '--plugin', 'html:build/reports/tests/cucumber-report.html',
+        '--glue', 'de.itagile.golf',
+        '--tags', 'not @ignore',
+        'src/cucumber/resources'
+    ]
 }
-
-
-mainClassName = 'de.itagile.golf.Main'
-
