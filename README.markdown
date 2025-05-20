@@ -1,11 +1,11 @@
 Quotes Language: Englisch
 
-* Java 11
-* Gradle 8.1
+* Java 21
+* Gradle 8.6
 
 ## Troubleshooting
 
-* Umlaut encoding is a problem on different mchines
+* Umlaut encoding is a problem on different machines
 * With Windows git should be configured so that CRLFs is executed in the right way: git config --global core.autocrlf true
 
 ## Checklist
