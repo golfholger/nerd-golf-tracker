@@ -13,9 +13,11 @@ public class HitCountOutput implements Operation {
 
 	@Override
 	public String execute(Scorecard scorecard) {
-		String template = "You got %d hit %s";
+		String hitWord = scorecard.hitCount()>1 ? "hits": "hit";
+		String	template ="You got %d %s %s";
 		return String.format(template, 
 							 scorecard.hitCount(), 
+							 hitWord,
 							 postOperation.execute(scorecard));
 	}
 }

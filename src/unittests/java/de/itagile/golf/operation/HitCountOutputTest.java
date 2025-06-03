@@ -23,6 +23,12 @@ class HitCountOutputTest {
 	}
 	
 	@Test
+	void multipleHitOutput() {
+		when(scorecard.hitCount()).thenReturn(2);
+		assertThat(hitCountOutput.execute(scorecard), containsString("2 hits"));
+	}
+	
+	@Test
 	void integratesOutputOfPostOperation() {
 		when(postOperation.execute(scorecard)).thenReturn("postOperation");
 		assertThat(hitCountOutput.execute(scorecard), containsString("postOperation"));
