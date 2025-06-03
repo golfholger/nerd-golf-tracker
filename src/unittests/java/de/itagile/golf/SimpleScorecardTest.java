@@ -27,6 +27,7 @@ class SimpleScorecardTest {
 	void resetHitCount() {
 		scorecard.increaseHitCount();
 		scorecard.finishHole();
+		assertThat(scorecard.hitCount(), is(0));
 	}
 	
 	@Test

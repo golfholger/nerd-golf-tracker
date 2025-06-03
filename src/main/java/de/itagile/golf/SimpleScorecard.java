@@ -11,6 +11,7 @@ public class SimpleScorecard implements Scorecard {
 
 	public void finishHole() {
 		currentHole++;
+		hitCount = 0;
 	}
 
 	public int hitCount() {
