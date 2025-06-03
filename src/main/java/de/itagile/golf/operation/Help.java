@@ -19,6 +19,7 @@ public class Help implements Operation {
 	@Override
 	public String execute(Scorecard scorecard) {
 		return "I respond to: "
+				+ SystemProperties.LINE_SEPARATOR
 				+ collector.collect().stream().map(this::helpLineFor).collect(joining(SystemProperties.LINE_SEPARATOR));
 	}
 

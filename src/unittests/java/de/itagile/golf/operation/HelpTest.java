@@ -29,7 +29,7 @@ class HelpTest {
 	@Test
 	void oneHelpLinePerCommand() {
 		String helpTextForTwoCommands = helpText(mock(Command.class), mock(Command.class));
-		assertThat(lineCount(helpTextForTwoCommands), is(2));
+		assertThat(lineCount(helpTextForTwoCommands), is(3));
 	}
 
 	private int lineCount(String string) {
