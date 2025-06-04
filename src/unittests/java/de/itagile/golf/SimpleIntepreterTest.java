@@ -22,7 +22,8 @@ class SimpleIntepreterTest {
 	    return Stream.of(
 	      arguments("Hit ball", Hit.class),
 	      arguments("Next hole", HoleChange.class),
-	      arguments("Help", Help.class)
+	      arguments("Help", Help.class),
+				arguments("Unkown command", Help.class)
 	    );
 	}
 	
