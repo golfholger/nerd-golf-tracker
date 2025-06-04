@@ -2,7 +2,6 @@ package de.itagile.golf;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static org.hamcrest.Matchers.containsString;
 
 public class UnknownStepdefs {
@@ -14,12 +13,11 @@ public class UnknownStepdefs {
 	}
 
 	@When("I put in an unknown command")
-	public void i_put_in_an_unknown_command() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	public void callUnknown() {
+		tracker.input("Unknown");
 	}
 	@Then("I see the Help")
-	public void i_see_the_help() {
-		// Write code here that turns the phrase above into concrete actions
+	public void checkHelpOutput() {
+		tracker.assertThatAnswer(containsString("I respond to:"));
 	}
 }
