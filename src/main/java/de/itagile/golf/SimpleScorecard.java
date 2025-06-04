@@ -1,5 +1,7 @@
 package de.itagile.golf;
 
+import java.util.List;
+
 public class SimpleScorecard implements Scorecard {
 
 	private int currentHole = 1;
@@ -20,5 +22,11 @@ public class SimpleScorecard implements Scorecard {
 
 	public int currentHole() {
 		return currentHole;
+	}
+
+	@Override
+	public List<Integer> hitsPerHole() {
+		// TODO Implement this
+		return null;
 	}
 }
