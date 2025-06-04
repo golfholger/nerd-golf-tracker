@@ -40,5 +40,50 @@ class SimpleScorecardTest {
 		scorecard.finishHole();
 		assertThat(scorecard.currentHole(), is(2));
 	}
+	@Test
+	void scorecardInitial() {
+		assertThat(scorecard.hitsPerHole().size(), is(1));
+		assertThat(scorecard.hitsPerHole().get(0), is(0));
+	}
+
+	@Test
+	void scorecardHitOnce() {
+		scorecard.increaseHitCount();
+		assertThat(scorecard.hitsPerHole().size(), is(1));
+		assertThat(scorecard.hitsPerHole().get(0), is(1));
+	}
+
+	@Test
+	void scorecardHitMultiple() {
+		scorecard.increaseHitCount();
+		scorecard.increaseHitCount();
+		scorecard.increaseHitCount();
+		assertThat(scorecard.hitsPerHole().size(), is(1));
+		assertThat(scorecard.hitsPerHole().get(0), is(3));
+	}
+
+	@Test
+	void scorecardFinishHole() {
+		scorecard.finishHole();
+		assertThat(scorecard.hitsPerHole().size(), is(2));
+		assertThat(scorecard.hitsPerHole().get(0), is(0));
+		assertThat(scorecard.hitsPerHole().get(1), is(0));
+	}
+
+	@Test
+	void scorecardFinishHolesHitMultiple() {
+		scorecard.increaseHitCount();
+		scorecard.increaseHitCount();
+		scorecard.increaseHitCount();
+		scorecard.finishHole();
+		scorecard.increaseHitCount();
+		scorecard.increaseHitCount();
+		scorecard.finishHole();
+		scorecard.increaseHitCount();
+		assertThat(scorecard.hitsPerHole().size(), is(3));
+		assertThat(scorecard.hitsPerHole().get(0), is(3));
+		assertThat(scorecard.hitsPerHole().get(1), is(2));
+		assertThat(scorecard.hitsPerHole().get(2), is(1));
+	}
 
 }
