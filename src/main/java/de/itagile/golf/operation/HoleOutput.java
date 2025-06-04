@@ -7,6 +7,6 @@ public class HoleOutput implements Operation {
 
 	@Override
 	public String execute(Scorecard scorecard) {
-		return "on the " + scorecard.currentHole() + ".hole.";
+		return "on the " + scorecard.currentHole() + ". hole.";
 	}
 }

@@ -15,7 +15,7 @@ class HoleOutputTest {
 	void outputCurrentHole() {
 		Scorecard scorecard = mock(Scorecard.class);
 		when(scorecard.currentHole()).thenReturn(42);
-		assertThat(new HoleOutput().execute(scorecard ), containsString("42.hole"));
+		assertThat(new HoleOutput().execute(scorecard ), containsString("42. hole"));
 	}
 
 }

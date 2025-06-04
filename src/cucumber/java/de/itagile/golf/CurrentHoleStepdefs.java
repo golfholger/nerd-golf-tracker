@@ -26,7 +26,7 @@ public class CurrentHoleStepdefs {
 	}
 
 	private void checkHoleOuptput(int expectedHole) {
-		tracker.assertThatAnswer(containsString(String.format("%d.hole", expectedHole)));
+		tracker.assertThatAnswer(containsString(String.format("%d. hole", expectedHole)));
 	}
 	
 }
