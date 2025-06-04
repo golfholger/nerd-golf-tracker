@@ -12,7 +12,9 @@ public class CurrentHoleStepdefs {
 	public CurrentHoleStepdefs(TrackerDriver tracker) {
 		this.tracker = tracker;
 	}
-	
+
+
+
 	@When("I go to the next hole")
     public void gotToTheNextHole() {
         tracker.input("Next hole");

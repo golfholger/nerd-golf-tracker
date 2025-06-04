@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import de.itagile.golf.operation.Help;
 import de.itagile.golf.operation.HoleChange;
 import de.itagile.golf.operation.Hit;
-import de.itagile.golf.operation.ScorecardOutputOperation;
+import de.itagile.golf.operation.ScorecardOutput;
 
 class SimpleIntepreterTest {
 
@@ -24,7 +24,7 @@ class SimpleIntepreterTest {
 	      arguments("Hit ball", Hit.class),
 	      arguments("Next hole", HoleChange.class),
 	      arguments("Help", Help.class),
-				arguments("Scorecard", ScorecardOutputOperation.class),
+				arguments("Scorecard", ScorecardOutput.class),
 				arguments("Unkown command", Help.class)
 	    );
 	}

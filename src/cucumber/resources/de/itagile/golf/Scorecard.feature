@@ -1,8 +1,7 @@
 Feature: Scorecard
 
-  @ignore
   Scenario Outline: Scorecard entry
-    Given I am on the <givenHole>. hole
+    Given Initially I am on the <givenHole>. hole
     And I hit the ball <givenHits> times
     When I use the Scorecard
     Then I see the Scorecard with last Entry hole: <expectedHole> and hit: <expectedHit>
