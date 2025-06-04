@@ -6,6 +6,7 @@ import java.util.List;
 import de.itagile.golf.command.HelpCommand;
 import de.itagile.golf.command.ChangeHoleCommand;
 import de.itagile.golf.command.HitCommand;
+import de.itagile.golf.command.ScorecardCommand;
 
 public class CommandCollector {
 
@@ -13,6 +14,7 @@ public class CommandCollector {
 		List<Command> harvest = new ArrayList<>();
 		harvest.add(new HitCommand());
 		harvest.add(new ChangeHoleCommand());
+		harvest.add(new ScorecardCommand());
 		harvest.add(new HelpCommand());
 		return harvest;
 	}
